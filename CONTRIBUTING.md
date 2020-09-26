@@ -11,7 +11,7 @@ Ensure your pull request adheres to the following guidelines:
 - Make an individual pull request for each suggestion.
 - Check your spelling and grammar.
 - The pull request and commit should have a useful title.
-- The commit should use [Conventional Commits](https://www.conventionalcommits.org/) specification.
+- The commit messages must be compatible with [Conventional Commits](https://www.conventionalcommits.org/) specification.
 
 ## Updating your Pull Request
 

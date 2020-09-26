@@ -228,11 +228,20 @@ Kick off your project with this default boilerplate. This starter ships with con
     Save your changes and the browser will update in real time.
     The unit tests will re-run automatically and Cypress will reload the app so that you can re-trigger the Cypress tests.
 
-10. **Commit your changes.**
+10. **Git Hooks.**
 
-    This project is using pre-commit hook to format your code with [Prettier](https://prettier.io/).
-    [Husky](https://github.com/typicode/husky) with [lint-staged](https://github.com/okonet/lint-staged) are configured,
-    so that when new files are staged and committed they will be formatted same way as `npm run format` command.
+    This project is using git hooks which are configured with [Husky](https://github.com/typicode/husky).
+
+    **"pre-commit" git hook**
+
+    This hook is configured to format your code with [Prettier](https://prettier.io/) and [lint-staged](https://github.com/okonet/lint-staged).
+    When new files are staged and committed they will be formatted same way as `npm run format` command.
+
+    **"commit-msg" git hook**
+
+    Your commit messages must be compatible with [Conventional Commits](https://www.conventionalcommits.org/) specification.
+    [commitlint](https://github.com/conventional-changelog/commitlint) is configured to make sure this specification is enforced.
+    You can use `npm run commit` command to commit your changes which is using [prompt](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/prompt-cli) to create the commit messages.
 
 ## ✅ Writing tests
 
@@ -288,6 +297,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     ├── .prettierrc
     ├── app.Dockerfile
     ├── CODE_OF_CONDUCT.md
+    ├── commitlint.config.js
     ├── CONTRIBUTING.md
     ├── cypress.json
     ├── gatsby-browser.js
@@ -350,36 +360,38 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 22. **`CODE_OF_CONDUCT.md`**: "Contributor Code of Conduct" document.
 
-23. **`CONTRIBUTING.md`**: "Contributing" document.
+23. **`commitlint.config.js`**: This is a configuration file for [commitlint](https://github.com/conventional-changelog/commitlint).
 
-24. **`cypress.json`**: This is a configuration file for [Cypress](https://www.cypress.io/). More information can be found [here](https://docs.cypress.io/guides/references/configuration.html).
+24. **`CONTRIBUTING.md`**: "Contributing" document.
 
-25. **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+25. **`cypress.json`**: This is a configuration file for [Cypress](https://www.cypress.io/). More information can be found [here](https://docs.cypress.io/guides/references/configuration.html).
 
-26. **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you'd like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+26. **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
-27. **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+27. **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you'd like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
 
-28. **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+28. **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
-29. **`jest.config.js`**: This is a configuration file for [Jest](https://jestjs.io/) and it is used when you run `npm run test` for `Unit Testing` and `Structural Testing`. More information can be found [here](https://www.gatsbyjs.org/docs/unit-testing/) and [here](https://jestjs.io/docs/en/configuration).
+29. **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
-30. **`jest.setup.js`**: This is a setup file for [Jest](https://jestjs.io/) that runs some code to configure or set up the testing framework before each test file in the suite while it is executed. More information can be found [here](https://jestjs.io/docs/en/configuration#setupfilesafterenv-array).
+30. **`jest.config.js`**: This is a configuration file for [Jest](https://jestjs.io/) and it is used when you run `npm run test` for `Unit Testing` and `Structural Testing`. More information can be found [here](https://www.gatsbyjs.org/docs/unit-testing/) and [here](https://jestjs.io/docs/en/configuration).
 
-31. **`jest.visual.config.js`**: This is a configuration file for [Jest](https://jestjs.io/) and it is used when you run `npm run test:visual` for `Automated Visual Testing`. More information can be found [here](https://www.gatsbyjs.org/docs/unit-testing/) and [here](https://jestjs.io/docs/en/configuration).
+31. **`jest.setup.js`**: This is a setup file for [Jest](https://jestjs.io/) that runs some code to configure or set up the testing framework before each test file in the suite while it is executed. More information can be found [here](https://jestjs.io/docs/en/configuration#setupfilesafterenv-array).
 
-32. **`jest-loadershim.js`**: This is a setup file for [Jest](https://jestjs.io/) and it is used to configure or set up the testing environment. More information can be found [here](https://jestjs.io/docs/en/configuration#setupfiles-array).
+32. **`jest.visual.config.js`**: This is a configuration file for [Jest](https://jestjs.io/) and it is used when you run `npm run test:visual` for `Automated Visual Testing`. More information can be found [here](https://www.gatsbyjs.org/docs/unit-testing/) and [here](https://jestjs.io/docs/en/configuration).
 
-33. **`jest-preprocess.js`**: This is a setup file for [Jest](https://jestjs.io/) that defines transformers. More information can be found [here](https://jestjs.io/docs/en/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object).
+33. **`jest-loadershim.js`**: This is a setup file for [Jest](https://jestjs.io/) and it is used to configure or set up the testing environment. More information can be found [here](https://jestjs.io/docs/en/configuration#setupfiles-array).
 
-34. **`jest-puppeteer.config.js`**: This is a configuration file for [jest-puppeteer](https://github.com/smooth-code/jest-puppeteer) and it is used when you run `npm run test:visual` for `Automated Visual Testing`. More information can be found [here](https://storybook.js.org/docs/testing/automated-visual-testing/#example-using-puppeteer-and-jest).
+34. **`jest-preprocess.js`**: This is a setup file for [Jest](https://jestjs.io/) that defines transformers. More information can be found [here](https://jestjs.io/docs/en/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object).
 
-35. **`LICENSE`**: Gatsby is licensed under the MIT license.
+35. **`jest-puppeteer.config.js`**: This is a configuration file for [jest-puppeteer](https://github.com/smooth-code/jest-puppeteer) and it is used when you run `npm run test:visual` for `Automated Visual Testing`. More information can be found [here](https://storybook.js.org/docs/testing/automated-visual-testing/#example-using-puppeteer-and-jest).
 
-36. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project's name, author, etc). This manifest is how npm knows which packages to install for your project.
+36. **`LICENSE`**: Gatsby is licensed under the MIT license.
 
-37. **`package-lock.json`** (See `package.json` above, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won't change this file directly).**
+37. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project's name, author, etc). This manifest is how npm knows which packages to install for your project.
 
-38. **`README.md`**: A text file containing useful reference information about your project.
+38. **`package-lock.json`** (See `package.json` above, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won't change this file directly).**
 
-39. **`test.Dockerfile`**: This file is used by [Docker](https://docs.docker.com/engine/reference/builder/) and defines the Docker image for `Automated Visual Testing`.
+39. **`README.md`**: A text file containing useful reference information about your project.
+
+40. **`test.Dockerfile`**: This file is used by [Docker](https://docs.docker.com/engine/reference/builder/) and defines the Docker image for `Automated Visual Testing`.
