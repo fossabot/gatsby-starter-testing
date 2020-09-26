@@ -8,6 +8,9 @@
   <a href="https://codecov.io/gh/DanailMinchev/gatsby-starter-testing">
     <img src="https://codecov.io/gh/DanailMinchev/gatsby-starter-testing/branch/master/graph/badge.svg" alt="Codecov status" />
   </a>
+  <a href="https://www.conventionalcommits.org/">
+    <img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg" alt="Conventional Commits" />
+  </a>
 </p>
 
 <p align="center">
