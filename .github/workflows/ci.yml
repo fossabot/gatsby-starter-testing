@@ -10,6 +10,7 @@ on:
     branches: [master]
   pull_request:
     branches: [master]
+    types: [opened, edited, reopened, synchronize]
 
 defaults:
   run:
@@ -87,12 +88,21 @@ jobs:
     name: Deploy
     needs: build-and-test
     runs-on: ubuntu-latest
-    if: (github.event_name == 'push' && github.ref == 'refs/heads/master') || (github.event_name == 'workflow_dispatch')
     steps:
+      - name: Checkout (Latest)
+        if: github.event.inputs.git-ref == ''
+        uses: actions/checkout@v2
+      - name: Checkout (Custom Ref)
+        if: github.event.inputs.git-ref != ''
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.inputs.git-ref }}
       - name: Setup Node.js 12.x
         uses: actions/setup-node@v2.1.1
         with:
           node-version: 12.x
+      - name: Install Dependencies
+        run: npm ci
       - name: Create Artifact Directories
         run: |
           mkdir -p ${{ github.workspace }}/public
@@ -101,11 +111,11 @@ jobs:
         with:
           name: public-12.x
           path: ${{ github.workspace }}/public
-      - name: Deploy
+      - name: Deploy PREVIEW
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         run: |
           if [[ -n ${NETLIFY_SITE_ID} && -n ${NETLIFY_AUTH_TOKEN} ]] ; then
-            npx netlify-cli deploy --prod --dir=public
+            npm run deploy:preview
           fi

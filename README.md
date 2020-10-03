@@ -273,6 +273,39 @@ Please see following articles:
 - [Running GUI applications using Docker for Mac](https://sourabhbajaj.com/blog/2017/02/07/gui-applications-docker-mac/)
 - [Run Cypress with a single Docker command](https://www.cypress.io/blog/2019/05/02/run-cypress-with-a-single-docker-command/)
 
+## Netlify integration
+
+This app defines Netlify configuration in [netlify.toml](./netlify.toml) file.
+
+Currently, the build and deploy process is done via [GitHub Actions](./.github/workflows/ci.yml) instead of Netlify.
+Netlify is used only to host the resources and not to build and deploy the app.
+
+### Netlify configuration
+
+Connect the repository to Netlify by clicking this button:
+
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/DanailMinchev/gatsby-starter-testing">
+  <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />
+</a>
+
+or following [Deploy with Git](https://docs.netlify.com/site-deploys/create-deploys/#deploy-with-git) documentation.
+
+You need to stop Netlify builds as described [here](https://docs.netlify.com/configure-builds/stop-or-activate-builds/#stop-builds).
+
+### Netlify GitHub configuration
+
+You need to configure [GitHub encrypted secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository) for [GitHub Actions](./.github/workflows/ci.yml) to be able to deploy the content.
+
+Follow the steps below:
+
+1. Register a new `Netlify personal access token` as described in [Obtain a token in the Netlify UI](https://docs.netlify.com/cli/get-started/#obtain-a-token-in-the-netlify-ui) document. Copy the value.
+2. Register a new `GitHub encrypted secret` as described in [Creating encrypted secrets for a repository](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
+   - `Name`: `NETLIFY_AUTH_TOKEN`
+   - `Value`: the personal access token value from step 1.
+3. Register a new `GitHub encrypted secret` as described in [Creating encrypted secrets for a repository](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
+   - `Name`: `NETLIFY_SITE_ID`
+   - `Value`: from the Netlify site dashboard, go to `Settings > General > Site details > Site information`, and copy the value. More information [here](https://docs.netlify.com/cli/get-started/#link-with-an-environment-variable).
+
 ## 🧐 What's inside?
 
 A quick look at the top-level files and directories you'll see in a Gatsby project.
