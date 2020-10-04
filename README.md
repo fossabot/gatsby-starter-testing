@@ -1,15 +1,18 @@
 <p align="center">
-  <a href="https://github.com/DanailMinchev/gatsby-starter-testing/blob/master/LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Project is released under the MIT license." />
-  </a>
   <a href="https://github.com/DanailMinchev/gatsby-starter-testing/actions">
     <img src="https://github.com/DanailMinchev/gatsby-starter-testing/workflows/CI/badge.svg?branch=master" alt="GitHub Actions status" />
   </a>
   <a href="https://codecov.io/gh/DanailMinchev/gatsby-starter-testing">
     <img src="https://codecov.io/gh/DanailMinchev/gatsby-starter-testing/branch/master/graph/badge.svg" alt="Codecov status" />
   </a>
+  <a href="https://github.com/DanailMinchev/gatsby-starter-testing/blob/master/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Project is released under the MIT license." />
+  </a>
   <a href="https://www.conventionalcommits.org/">
     <img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg" alt="Conventional Commits" />
+  </a>
+  <a href="https://github.com/semantic-release/semantic-release">
+    <img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="semantic-release" />
   </a>
 </p>
 

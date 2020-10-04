@@ -2,7 +2,7 @@
   "name": "gatsby-starter-testing",
   "private": true,
   "description": "A simple Gatsby starter with configured testing",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "license": "MIT",
   "author": "Danail Minchev <danail.minchev@gmail.com>",
   "scripts": {
@@ -45,6 +45,7 @@
     "storybook": "cross-env NODE_ENV=production start-storybook --host 0.0.0.0 --port 6006 --static-dir public --ci --quiet",
     "build-storybook": "cross-env NODE_ENV=production build-storybook --static-dir public",
     "commit": "commit",
+    "release": "semantic-release",
     "deploy:preview": "dotenv -- netlify deploy --dir=public --functions=functions --message \"$(git log -1 --pretty=format:\"%h | %s\")\"",
     "deploy:uat": "dotenv -- netlify deploy --alias \"uat\" --dir=public --functions=functions --message \"$(git log -1 --pretty=format:\"%h | %s\")\"",
     "deploy:prod": "dotenv -- netlify deploy --prod --dir=public --functions=functions --message \"$(git log -1 --pretty=format:\"%h | %s\")\""
@@ -98,6 +99,7 @@
     "prettier": "2.1.2",
     "puppeteer": "5.3.1",
     "react-test-renderer": "16.13.1",
+    "semantic-release": "17.1.2",
     "start-server-and-test": "1.11.4"
   },
   "husky": {
