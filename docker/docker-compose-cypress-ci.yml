@@ -11,4 +11,4 @@ services:
     environment:
       - NODE_ENV=production
   cypress:
-    command: /opt/node_app/app/docker/wait-for-it.sh app:8000 --timeout=0 -- cypress run --browser chrome --headless
+    command: /opt/node_app/app/docker/wait-for-it.sh app.local:8000 --timeout=0 -- cypress run --browser chrome --headless

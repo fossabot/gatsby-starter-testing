@@ -13,7 +13,7 @@ services:
     environment:
       - NODE_ENV=development
   cypress:
-    command: /opt/node_app/app/docker/wait-for-it.sh app:8000 --timeout=0 -- cypress open
+    command: /opt/node_app/app/docker/wait-for-it.sh app.local:8000 --timeout=0 -- cypress open
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
     environment:
