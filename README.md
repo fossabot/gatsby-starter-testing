@@ -14,6 +14,7 @@
   <a href="https://codecov.io/gh/DanailMinchev/gatsby-starter-testing">
     <img src="https://codecov.io/gh/DanailMinchev/gatsby-starter-testing/branch/master/graph/badge.svg" alt="Codecov status" />
   </a>
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2FDanailMinchev%2Fgatsby-starter-testing?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FDanailMinchev%2Fgatsby-starter-testing.svg?type=shield"/></a>
   <a href="https://github.com/DanailMinchev/gatsby-starter-testing/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Project is released under the MIT license." />
   </a>
@@ -41,6 +42,9 @@ Kick off your project with this default boilerplate. This starter ships with con
 - Automated Visual Testing:
   - [Storybook](https://storybook.js.org/) with [jest-puppeteer](https://github.com/smooth-code/jest-puppeteer) and [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot)
   - [Cypress](https://www.cypress.io/) with [Cypress Image Snapshot](https://github.com/palmerhq/cypress-image-snapshot)
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FDanailMinchev%2Fgatsby-starter-testing.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FDanailMinchev%2Fgatsby-starter-testing?ref=badge_large)
 
 ## 🚀 Quick start
 
